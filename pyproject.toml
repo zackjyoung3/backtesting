@@ -7,8 +7,30 @@ authors = [
     { name = "zackjyoung3", email = "zackjyoung3@gmail.com" }
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "pandas>=2.2.3",
+    "polars>=1.28.0",
+]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 120
+
+lint.select = [
+  "E",    # pycodestyle error-level issues (indentation, whitespace, etc.)
+  "F",    # pyflakes: undefined names, unused imports – essential for catching real bugs
+  "W",    # pycodestyle warnings – minor stylistic issues (optional with ruff format)
+  "A",    # flake8-builtins: prevents shadowing built-ins like `list`, `id`, etc.
+  "PLC",  # pylint convention: naming conventions (can be noisy, use if you want naming standards)
+  "PLE",  # pylint errors: more serious issues, worth keeping
+  "PLW",  # pylint warnings: mild/potential issues – optional depending on tolerance
+  "I",    # isort: import ordering (keep if you're enforcing import structure)
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.7",
+]
