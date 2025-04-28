@@ -1,4 +1,24 @@
-from enum import IntEnum
+from enum import IntEnum, StrEnum
+
+
+class AssetType(StrEnum):
+    """Asset types that are in scope for this project"""
+
+    EQUITY = "EQUITY"
+    CRYPTO = "CRYPTO"
+    COMMODITY = "COMMODITY"
+
+
+class TimeUnit(StrEnum):
+    """Different time units that are going to be supported in terms of granularity for intervals"""
+
+    SECONDS = "SECONDS"
+    MINUTES = "MINUTES"
+    HOURS = "HOURS"
+    DAYS = "DAYS"
+    WEEKS = "WEEKS"
+    MONTHS = "MONTHS"
+    YEARS = "YEARS"
 
 
 class TimeConversionMultiplier(IntEnum):
