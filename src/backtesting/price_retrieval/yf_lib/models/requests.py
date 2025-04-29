@@ -6,7 +6,7 @@ Only model subset of requests to yfinance that we want our application to suppor
 
 from abc import ABC
 from datetime import date
-from typing import Any, Self
+from typing import Any
 
 from pydantic import BaseModel
 
